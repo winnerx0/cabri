@@ -58,10 +58,17 @@ serve({
 
       const transactions = await Promise.all(await data)
 
-      for (let i = 0; i < 3; i++) {
-        const worker = new Worker('./dist/worker.js', { type: 'module' })
+      console.log('Transactions parsed successfully:', transactions.length)
 
-        worker.postMessage(transactions.slice(i * 100, (i + 1) * 100))
+      const numberOfWorkers = 3
+
+      const CHUNK_SIZE = transactions.length / numberOfWorkers
+
+      // Split transactions into chunks and send to workers for parallel processing
+      for (let i = 0; i < numberOfWorkers; i++) {
+        const worker = new Worker('./worker.ts')
+
+        worker.postMessage(transactions.slice(i * CHUNK_SIZE, (i + 1) * CHUNK_SIZE))
 
         worker.onmessage = (event: MessageEvent) => {
           console.log(event.data)

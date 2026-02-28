@@ -12,6 +12,8 @@ database.connect().catch((err) => {
 self.onmessage = (event: MessageEvent) => {
   const data: Transaction[] = event.data
 
+  console.log('Worker received transactions:', data.length)
+
   for (const transaction of data) {
     database
       .query(
@@ -27,7 +29,6 @@ self.onmessage = (event: MessageEvent) => {
       .then(() => console.log('Successfully inserted transaction:', transaction))
       .catch(() => console.log('Failed to insert transaction:', transaction))
 
-    return transaction
   }
 
   postMessage('Transactions processed successfully')
