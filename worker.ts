@@ -18,17 +18,15 @@ self.onmessage = (event: MessageEvent) => {
     database
       .query(
         `   
-                INSERT INTO transactions (data_time, amount, receiver, balance)
-                VALUES ($1, $2, $3, $4)
-                `,
+        INSERT INTO transactions (date_time, amount, receiver, balance)
+        VALUES ($1, $2, $3, $4)
+        `,
         [transaction.dataTime, transaction.amount, transaction.receiver, transaction.balance]
       )
       .catch((err) => {
         console.error('Failed to insert transaction:', err)
       })
-      .then(() => console.log('Successfully inserted transaction:', transaction))
       .catch(() => console.log('Failed to insert transaction:', transaction))
-
   }
 
   postMessage('Transactions processed successfully')

@@ -1,15 +1,9 @@
-# cabri
+# Cabri
 
-To install dependencies:
+## get the total monthly transactions with details of the daily transactions
 
-```bash
-bun install
-```
+## rank the monthly transactions according to the highest amount
 
-To run:
+## find the most recocurring receiver
 
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.2.16. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+## find the days with the highest number of transactions 
