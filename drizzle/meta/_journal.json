@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1774538062822,
+      "tag": "0000_nostalgic_cyclops",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1774538639478,
+      "tag": "0001_amazing_silver_surfer",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1774544159723,
+      "tag": "0002_early_lockjaw",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1774544928764,
+      "tag": "0003_marvelous_next_avengers",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1774547025857,
+      "tag": "0004_spotty_galactus",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1774547098878,
+      "tag": "0005_medical_ronan",
+      "breakpoints": true
+    }
+  ]
+}
