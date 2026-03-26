@@ -1,9 +1,36 @@
-# Cabri
+# cabri
 
-## get the total monthly transactions with details of the daily transactions
+AI-powered cron job automation. Describe tasks in natural language and Cabri creates scheduled jobs with configurable steps (HTTP requests, conditions, email).
 
-## rank the monthly transactions according to the highest amount
+Built with LangChain agents, Drizzle ORM (SQLite), and Bun.
 
-## find the most recocurring receiver
+## Setup
 
-## find the days with the highest number of transactions 
+```bash
+bun install
+```
+
+Create a `.env` file:
+
+```env
+DB_FILE_NAME=file:cabri.db
+GROQ_API_KEY=your_groq_api_key
+```
+
+Run database migrations:
+
+```bash
+bunx drizzle-kit push
+```
+
+## Usage
+
+```bash
+bun run index.ts
+```
+
+## Step Types
+
+- **HTTP_REQUEST** — Make HTTP GET/POST requests on a schedule
+- **CONDITION** — Evaluate expressions to control job flow
+- **SEND_MAIL** — Send emails with configurable to/subject/body
